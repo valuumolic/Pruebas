@@ -33,7 +33,7 @@ const grafico = new Chart(ctx, {
 function registrarDonacion(event) {
     event.preventDefault(); // Evita que el formulario recargue la página
 
-    const monto = parseFloat(document.getElementById("monto").value);
+    const monto = parseFloat(document.getElementById("monto").value.replace(/,/g, ''));
     if (isNaN(monto) || monto <= 0) {
         alert("Por favor, ingresa un monto válido.");
         return;
@@ -84,3 +84,4 @@ function actualizarBarras() {
     document.getElementById("porcentaje-salud").textContent = `${porcentajeSalud}%`;
     document.getElementById("porcentaje-alimentacion").textContent = `${porcentajeAlimentacion}%`;
 }
+
