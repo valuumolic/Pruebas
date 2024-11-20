@@ -14,37 +14,42 @@
         <h1>Transformemos vidas en La Guajira</h1>
         <p>Elige una organización benéfica y haz tu donación.</p>
 
-        <!-- Selector de Organización -->
-        <div>
+        <!-- Gráfico de Donaciones -->
+        <div id="grafico-impacto">
+            <canvas id="graficoDonaciones" width="300" height="300"></canvas>
+        </div>
+
+        <!-- Barra de porcentajes -->
+        <div id="barras-organizaciones">
+            <div class="organizacion">
+                <span>Educación:</span>
+                <span id="porcentaje-educacion">0%</span>
+            </div>
+            <div class="organizacion">
+                <span>Salud:</span>
+                <span id="porcentaje-salud">0%</span>
+            </div>
+            <div class="organizacion">
+                <span>Alimentación:</span>
+                <span id="porcentaje-alimentacion">0%</span>
+            </div>
+        </div>
+
+        <!-- Formulario de Donaciones -->
+        <h3>Haz una donación</h3>
+        <form id="form-donacion" onsubmit="registrarDonacion(event)">
             <label for="organizacion">Selecciona una organización:</label>
             <select id="organizacion">
                 <option value="educacion">Fundación para Educación</option>
                 <option value="salud">Fundación para Salud</option>
                 <option value="alimentacion">Fundación para Alimentación</option>
             </select>
-        </div>
-
-        <div>
-            <p>Cantidad recaudada para la organización seleccionada:</p>
-            <h2 id="contador-recaudado">$0</h2>
-        </div>
-
-        <!-- Gráfico de Donaciones -->
-        <div id="grafico-impacto">
-            <canvas id="graficoDonaciones" width="1000" height="1000"></canvas>
-        </div>
-
-        <p>¡Cada donación cuenta! Ayúdanos a alcanzar nuestra meta.</p>
-
-        <!-- Formulario de Donaciones -->
-        <h3>Haz una donación</h3>
-        <form id="form-donacion" onsubmit="registrarDonacion(event)">
-            <input type="number" id="monto" placeholder="Ingresa el monto de tu donación" required min="1">
+            <input type="number" id="monto" placeholder="Ingresa el monto de tu donación en COP" required min="1">
             <button type="submit">Donar</button>
         </form>
     </section>
 
-    <script src="scrp.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
