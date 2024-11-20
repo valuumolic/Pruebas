@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donaciones para La Guajira</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
 
+    <!-- Sección Principal -->
+    <section id="inicio-impacto">
+        <h1>Transformemos vidas en La Guajira</h1>
+        <p>Cantidad recaudada hasta ahora:</p>
+        <h2 id="contador-recaudado">$0</h2>
+
+        <!-- Gráfico de Donaciones -->
+        <div id="grafico-impacto">
+            <canvas id="graficoDonaciones" width="300" height="300"></canvas>
+        </div>
+
+        <p>¡Cada donación cuenta! Ayúdanos a alcanzar nuestra meta.</p>
+
+        <!-- Formulario de Donaciones -->
+        <h3>Haz una donación</h3>
+        <form id="form-donacion" onsubmit="registrarDonacion(event)">
+            <input type="number" id="monto" placeholder="Ingresa el monto de tu donación" required min="1">
+            <button type="submit">Donar</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
