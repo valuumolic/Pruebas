@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+#inicio-impacto {
+    background: linear-gradient(to bottom, #4CAF50, #e8f5e9);
+    padding: 30px;
+    color: white;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#contador-recaudado {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 10px 0;
+}
+
+#grafico-impacto {
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+}
+
+canvas {
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 200px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
