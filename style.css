@@ -8,7 +8,7 @@ body {
 }
 
 #inicio-impacto {
-    background: linear-gradient(to bottom, #65c3ca, #e8f5e9);
+    background: linear-gradient(to bottom, #027969, #e8f5e9);
     padding: 30px;
     color: white;
 }
@@ -50,7 +50,7 @@ input[type="number"] {
 button {
     padding: 10px 20px;
     font-size: 1em;
-    background-color: #04658b;
+    background-color: #00b4ab;
     color: white;
     border: none;
     cursor: pointer;
@@ -58,5 +58,5 @@ button {
 }
 
 button:hover {
-    background-color: #58b7dd;
+    background-color: #00b4ab;
 }
