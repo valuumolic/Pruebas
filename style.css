@@ -79,7 +79,7 @@ button:hover {
 
 /* Para el gráfico */
 canvas {
-    border-radius: 50%;
+    border-radius: 80%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
