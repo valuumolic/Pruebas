@@ -80,7 +80,7 @@ function actualizarBarras() {
         ? ((donaciones.alimentacion / totalDonaciones) * 100).toFixed(2)
         : 0;
 
-    document.getElementById("porcentaje-educacion").textContent = ${porcentajeEducacion}%;
-    document.getElementById("porcentaje-salud").textContent = ${porcentajeSalud}%;
-    document.getElementById("porcentaje-alimentacion").textContent = ${porcentajeAlimentacion}%;
+    document.getElementById("porcentaje-educacion").textContent = `${porcentajeEducacion}%`;
+    document.getElementById("porcentaje-salud").textContent = `${porcentajeSalud}%`;
+    document.getElementById("porcentaje-alimentacion").textContent = `${porcentajeAlimentacion}%`;
 }

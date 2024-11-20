@@ -40,10 +40,11 @@
         <form id="form-donacion" onsubmit="registrarDonacion(event)">
             <label for="organizacion">Selecciona una organización:</label>
             <select id="organizacion">
-                <option value="educacion">Fundación para Educación</option>
-                <option value="salud">Fundación para Salud</option>
-                <option value="alimentacion">Fundación para Alimentación</option>
+                <option value="educacion">Educación</option>
+                <option value="salud">Salud</option>
+                <option value="alimentacion">Alimentación</option>
             </select>
+            
             <input type="number" id="monto" placeholder="Ingresa el monto de tu donación en COP" required min="1">
             <button type="submit">Donar</button>
         </form>
