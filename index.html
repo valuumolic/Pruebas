@@ -12,8 +12,22 @@
     <!-- Sección Principal -->
     <section id="inicio-impacto">
         <h1>Transformemos vidas en La Guajira</h1>
-        <p>Cantidad recaudada hasta ahora:</p>
-        <h2 id="contador-recaudado">$0</h2>
+        <p>Elige una organización benéfica y haz tu donación.</p>
+
+        <!-- Selector de Organización -->
+        <div>
+            <label for="organizacion">Selecciona una organización:</label>
+            <select id="organizacion">
+                <option value="educacion">Fundación para Educación</option>
+                <option value="salud">Fundación para Salud</option>
+                <option value="alimentacion">Fundación para Alimentación</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Cantidad recaudada para la organización seleccionada:</p>
+            <h2 id="contador-recaudado">$0</h2>
+        </div>
 
         <!-- Gráfico de Donaciones -->
         <div id="grafico-impacto">
