@@ -10,7 +10,7 @@ body {
 
 /* Sección Principal */
 #inicio-impacto {
-    background: linear-gradient(to bottom, #4CAF50, #81C784); /* Verde degradado suave */
+    background: linear-gradient(to bottom, #389df0, #84d0f3); /* Verde degradado suave */
     padding: 40px;
     color: white;
     border-radius: 10px;
@@ -28,14 +28,6 @@ h2 {
     font-size: 2em;
     color: #FFD700; /* Amarillo para destacar el monto recaudado */
     font-weight: bold;
-    margin: 10px 0;
-}
-
-/* Estilo para el contador de donaciones */
-#contador-recaudado {
-    font-size: 48px;
-    font-weight: bold;
-    color: #FFD700; /* Amarillo brillante */
     margin: 10px 0;
 }
 
@@ -64,7 +56,7 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-    border-color: #4CAF50;
+    border-color: #0355a1;
     background-color: #f4f9f4;
 }
 
