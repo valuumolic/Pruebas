@@ -25,7 +25,7 @@ const ctx = document.getElementById("graficoDonaciones").getContext("2d");
 const grafico = new Chart(ctx, {
     type: "doughnut",
     data: {
-        labels: ["Educación para Todos", "Fundación Bienestar", "Alimentando Corazones"],
+        labels: ["Educación", "Salud", "Alimentación"],
         datasets: [
             {
                 data: [0, 0, 0],
