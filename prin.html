@@ -19,6 +19,7 @@
             color: #fff;
             padding: 1em;
             text-align: center;
+            position: relative;
         }
 
         nav ul {
@@ -31,6 +32,7 @@
 
         nav ul li {
             margin: 0 1em;
+            position: relative;
         }
 
         nav ul li a {
@@ -41,6 +43,32 @@
 
         nav ul li a:hover {
             text-decoration: underline;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            width: 100%;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 1em;
+            display: block;
+            text-align: left;
         }
 
         section {
@@ -108,7 +136,13 @@
         <ul>
             <li><a href="#ingresar">Ingresar</a></li>
             <li><a href="#registro">Registro</a></li>
-            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#quienes-somos">Quiénes Somos</a>
+                <ul>
+                    <li><a href="#mision">Misión</a></li>
+                    <li><a href="#vision">Visión</a></li>
+                    <li><a href="#valores">Valores</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 
