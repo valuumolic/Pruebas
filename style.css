@@ -10,7 +10,7 @@ body {
 
 /* Sección principal */
 #inicio-impacto {
-    background: linear-gradient(to bottom, #4CAF50, #81C784);
+    background: linear-gradient(to bottom, #7945cc, #a774e0);
     padding: 40px;
     color: white;
     border-radius: 10px;
@@ -34,7 +34,7 @@ body {
 
 .organizacion {
     background-color: white;
-    color: #4CAF50;
+    color: #8704f3;
     border-radius: 5px;
     padding: 10px 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -58,7 +58,7 @@ input[type="number"] {
 button {
     padding: 12px 25px;
     font-size: 1.2em;
-    background-color: #FF7043;
+    background-color: #c50202;
     color: white;
     border: none;
     cursor: pointer;
@@ -67,5 +67,5 @@ button {
 }
 
 button:hover {
-    background-color: #FF5722;
+    background-color: #c50202;
 }
