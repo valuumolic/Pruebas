@@ -1,10 +1,15 @@
 // Variables de donación y meta
-let cantidadRecaudada = 0; // Monto inicial
-const meta = 1000; // Meta de donaciones
+let donaciones = {
+    educacion: 0,
+    salud: 0,
+    alimentacion: 0
+};
 
 // Actualización del contador animado
 function actualizarContador() {
-    document.getElementById("contador-recaudado").textContent = cantidadRecaudada.toFixed(2);
+    const organizacionSeleccionada = document.getElementById("organizacion").value;
+    const montoAcumulado = donaciones[organizacionSeleccionada];
+    document.getElementById("contador-recaudado").textContent = montoAcumulado.toFixed(2);
 }
 
 // Configuración del gráfico de donaciones
@@ -16,7 +21,7 @@ const grafico = new Chart(ctx, {
         datasets: [
             {
                 label: "Distribución de Donaciones",
-                data: [40, 35, 25], // Porcentajes iniciales
+                data: [0, 0, 0], // Inicialmente en cero
                 backgroundColor: ["#FFD700", "#4CAF50", "#FF5733"],
                 borderWidth: 1,
             },
@@ -43,20 +48,23 @@ function registrarDonacion(event) {
         return;
     }
 
-    // Actualizar la cantidad recaudada
-    cantidadRecaudada += monto;
+    // Obtener la organización seleccionada
+    const organizacionSeleccionada = document.getElementById("organizacion").value;
+
+    // Sumar la donación a la organización seleccionada
+    donaciones[organizacionSeleccionada] += monto;
+
+    // Actualizar el contador
     actualizarContador();
 
-    // Actualizar gráfico de donaciones (simulando cambios)
-    const porcentaje = (cantidadRecaudada / meta) * 100;
-    if (porcentaje < 100) {
-        grafico.data.datasets[0].data = [porcentaje * 0.4, porcentaje * 0.35, porcentaje * 0.25];
-        grafico.update();
-    } else {
-        grafico.data.datasets[0].data = [40, 35, 25]; // Meta alcanzada
-        grafico.update();
-        alert("¡Gracias por tu donación! Hemos alcanzado nuestra meta.");
-    }
+    // Actualizar gráfico de donaciones
+    const totalDonaciones = donaciones.educacion + donaciones.salud + donaciones.alimentacion;
+    const porcentajeEducacion = (donaciones.educacion / totalDonaciones) * 100;
+    const porcentajeSalud = (donaciones.salud / totalDonaciones) * 100;
+    const porcentajeAlimentacion = (donaciones.alimentacion / totalDonaciones) * 100;
+
+    grafico.data.datasets[0].data = [porcentajeEducacion, porcentajeSalud, porcentajeAlimentacion];
+    grafico.update();
 
     // Limpiar el campo del formulario
     document.getElementById("form-donacion").reset();
