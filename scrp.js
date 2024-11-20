@@ -25,7 +25,7 @@ const grafico = new Chart(ctx, {
         datasets: [
             {
                 data: [0, 0, 0],
-                backgroundColor: ["#FFD700", "#4CAF50", "#FF5733"],
+                backgroundColor: ["#DFFF00", "#FFBF00", "#9FE2BF"],
                 borderWidth: 1,
             },
         ],
