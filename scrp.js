@@ -85,3 +85,4 @@ function actualizarBarras() {
     document.getElementById("porcentaje-alimentacion").textContent = `${porcentajeAlimentacion}%`;
 }
 
+
