@@ -4,7 +4,7 @@ const meta = 1000; // Meta de donaciones
 
 // Actualización del contador animado
 function actualizarContador() {
-    document.getElementById("contador-recaudado").textContent = $${cantidadRecaudada.toFixed(2)};
+    document.getElementById("contador-recaudado").textContent = cantidadRecaudada.toFixed(2);
 }
 
 // Configuración del gráfico de donaciones
@@ -54,36 +54,6 @@ function registrarDonacion(event) {
         grafico.update();
     } else {
         grafico.data.datasets[0].data = [40, 35, 25]; // Meta alcanzada
-        grafico.update();
-        alert("¡Gracias por tu donación! Hemos alcanzado nuestra meta.");
-    }
-
-    // Limpiar el campo del formulario
-    document.getElementById("form-donacion").reset();
-}
-
-// Registrar donación
-function registrarDonacion(event) {
-    event.preventDefault(); // Evitar que el formulario se envíe y recargue la página
-
-    const monto = parseFloat(document.getElementById("monto").value);
-    
-    if (isNaN(monto) || monto <= 0) {
-        alert("Por favor, ingresa una cantidad válida.");
-        return;
-    }
-
-    // Actualizar la cantidad recaudada
-    cantidadRecaudada += monto;
-    document.getElementById("contador-recaudado").textContent = $${cantidadRecaudada.toFixed(2)};
-
-    // Actualizar gráfico de donaciones (simulando cambios)
-    const porcentaje = (cantidadRecaudada / meta) * 100;
-    if (porcentaje < 100) {
-        grafico.data.datasets[0].data = [porcentaje * 0.4, porcentaje * 0.35, porcentaje * 0.25];
-        grafico.update();
-    } else {
-        grafico.data.datasets[0].data = [40, 35, 25];
         grafico.update();
         alert("¡Gracias por tu donación! Hemos alcanzado nuestra meta.");
     }
