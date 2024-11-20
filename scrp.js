@@ -1,11 +1,9 @@
-// Variables de donación y meta
 let donaciones = {
     educacion: 0,
     salud: 0,
     alimentacion: 0,
 };
 
-// Cargar donaciones desde localStorage
 function cargarDonaciones() {
     const donacionesGuardadas = localStorage.getItem('donaciones');
     if (donacionesGuardadas) {
@@ -15,12 +13,10 @@ function cargarDonaciones() {
     }
 }
 
-// Guardar donaciones en localStorage
 function guardarDonaciones() {
     localStorage.setItem('donaciones', JSON.stringify(donaciones));
 }
 
-// Configuración inicial del gráfico
 const ctx = document.getElementById("graficoDonaciones").getContext("2d");
 const grafico = new Chart(ctx, {
     type: "doughnut",
@@ -44,9 +40,8 @@ const grafico = new Chart(ctx, {
     },
 });
 
-// Registrar donación
 function registrarDonacion(event) {
-    event.preventDefault(); // Evita que el formulario recargue la página
+    event.preventDefault(); 
 
     const monto = parseFloat(document.getElementById("monto").value.replace(/,/g, ''));
     if (isNaN(monto) || monto <= 0) {
@@ -54,24 +49,18 @@ function registrarDonacion(event) {
         return;
     }
 
-    // Obtener la organización seleccionada
     const organizacionSeleccionada = document.getElementById("organizacion").value;
 
-    // Actualizar el total de donaciones para la organización seleccionada
     donaciones[organizacionSeleccionada] += monto;
 
-    // Guardar donaciones en localStorage
     guardarDonaciones();
 
-    // Actualizar el gráfico y las barras de porcentajes
     actualizarGrafico();
     actualizarBarras();
 
-    // Limpiar el formulario
     document.getElementById("form-donacion").reset();
 }
 
-// Actualizar gráfico de donaciones
 function actualizarGrafico() {
     const totalDonaciones = donaciones.educacion + donaciones.salud + donaciones.alimentacion;
 
@@ -84,7 +73,6 @@ function actualizarGrafico() {
     grafico.update();
 }
 
-// Actualizar las barras de porcentajes
 function actualizarBarras() {
     const totalDonaciones = donaciones.educacion + donaciones.salud + donaciones.alimentacion;
 
@@ -103,6 +91,5 @@ function actualizarBarras() {
     document.getElementById("porcentaje-alimentacion").textContent = `${porcentajeAlimentacion}%`;
 }
 
-// Cargar donaciones al iniciar la página
 window.onload = cargarDonaciones;
 
