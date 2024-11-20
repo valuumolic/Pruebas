@@ -28,7 +28,7 @@ const grafico = new Chart(ctx, {
         labels: ["Educación", "Salud", "Alimentación"],
         datasets: [
             {
-                data: [donaciones.educacion, donaciones.salud, donaciones.alimentacion],
+                data: [0, 0, 0],
                 backgroundColor: ["#FFD700", "#4CAF50", "#FF5733"],
                 borderWidth: 1,
             },
