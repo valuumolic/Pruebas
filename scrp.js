@@ -5,6 +5,21 @@ let donaciones = {
     alimentacion: 0,
 };
 
+// Cargar donaciones desde localStorage
+function cargarDonaciones() {
+    const donacionesGuardadas = localStorage.getItem('donaciones');
+    if (donacionesGuardadas) {
+        donaciones = JSON.parse(donacionesGuardadas);
+        actualizarGrafico();
+        actualizarBarras();
+    }
+}
+
+// Guardar donaciones en localStorage
+function guardarDonaciones() {
+    localStorage.setItem('donaciones', JSON.stringify(donaciones));
+}
+
 // Configuración inicial del gráfico
 const ctx = document.getElementById("graficoDonaciones").getContext("2d");
 const grafico = new Chart(ctx, {
@@ -45,6 +60,9 @@ function registrarDonacion(event) {
     // Actualizar el total de donaciones para la organización seleccionada
     donaciones[organizacionSeleccionada] += monto;
 
+    // Guardar donaciones en localStorage
+    guardarDonaciones();
+
     // Actualizar el gráfico y las barras de porcentajes
     actualizarGrafico();
     actualizarBarras();
@@ -84,5 +102,9 @@ function actualizarBarras() {
     document.getElementById("porcentaje-salud").textContent = `${porcentajeSalud}%`;
     document.getElementById("porcentaje-alimentacion").textContent = `${porcentajeAlimentacion}%`;
 }
+
+// Cargar donaciones al iniciar la página
+window.onload = cargarDonaciones;
+
 
 
