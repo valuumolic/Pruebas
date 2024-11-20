@@ -105,3 +105,4 @@ function actualizarBarras() {
 
 // Cargar donaciones al iniciar la página
 window.onload = cargarDonaciones;
+
